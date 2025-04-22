@@ -209,10 +209,7 @@ app.get('/proctorDashboard', checkAuth, (req, res) => {
 app.get('/adminDashboard', checkAuth, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'adminDashboard.html'));
 });
-app.get('/favicon.ico', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'icons', 'favicon.ico'));
-  });
-  
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 //console.log(process.env)
