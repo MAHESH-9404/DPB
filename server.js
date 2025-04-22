@@ -1839,8 +1839,8 @@ router.use((req, res) => {
 
 // Start the server//RAILWAY
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-    // console.log(`Server is running on Railway : ${PORT}`);
+    // console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on Railway : ${PORT}`);
 });
 
 module.exports = app;

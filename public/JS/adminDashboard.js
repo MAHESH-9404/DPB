@@ -310,8 +310,8 @@ $(document).ready(function () {
             $.ajax({//RAILWAY
                 type: 'POST',
                 // // url: '/assignProctor',
-                url: 'http://localhost:5000/assignProctor',
-                // url:'https://studentsrecordsystem-production.up.railway.app/assignProctor',
+                // url: 'http://localhost:5000/assignProctor',
+                url:'https://dpb-production.up.railway.app/assignProctor',
                 data: JSON.stringify({ proctor_id: assignProctorId, student_ids: selectedStudents }),
                 contentType: 'application/json',
                 success: (response) => {
