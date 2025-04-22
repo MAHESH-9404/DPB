@@ -18,7 +18,7 @@ const db = require('./config/database');
 const csv = require('csv-parser');
 const crypto = require("crypto");
 const router = express.Router();
-const PORT = process.env.PORT || 3000 ;
+const PORT = process.env.PORT || 5000;
 const saltRounds = 10;
 const app = express();
 const studentRoutes = require("./routes/StudentRoutes");
@@ -209,6 +209,10 @@ app.get('/proctorDashboard', checkAuth, (req, res) => {
 app.get('/adminDashboard', checkAuth, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'adminDashboard.html'));
 });
+app.get('/favicon.ico', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'icons', 'favicon.ico'));
+  });
+  
 
 app.use(express.static(path.join(__dirname, 'public')));
 //console.log(process.env)
@@ -1833,10 +1837,11 @@ app.post('/updateStudentProfile', async (req, res) => {
 
 
 //──────────────────────────────────Routes───────────────────────────────────────────────────
-router.use((req, res) => {
-    res.status(404).json({ success: false, message: "API not found" });
-});
 
+app.set("trust proxy", 1); // Trust first proxy
+app.use((req, res) => {
+    res.status(404).json({ success: false, message: "API not found" });
+  });
 // Start the server//RAILWAY
 app.listen(PORT, () => {
     // console.log(`Server is running on http://localhost:${PORT}`);
@@ -1844,9 +1849,8 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
-module.exports = router;
+
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-app.set("trust proxy", 1); // Trust first proxy
