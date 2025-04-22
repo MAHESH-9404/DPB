@@ -134,7 +134,7 @@ app.use('/twilio', twilioWebhook);
 const allowedOrigins = [
   "http://localhost:3000",  // Local frontend
   "http://localhost:5000",  // If you're testing from another local port
-  "https://studentsrecordsystem-production.up.railway.app", // Deployed frontend
+  "https://dpb-production.up.railway.app", // Deployed frontend
 ];
 
 app.use(
