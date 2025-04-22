@@ -4,7 +4,18 @@ document.getElementById('resetPasswordForm').addEventListener('submit', async (e
   const role = document.getElementById('role').value;
   const code = document.getElementById('code').value;
   const newPassword = document.getElementById('newPassword').value;
+  const confirmPassword = document.getElementById("confirmpassword")?.value.trim();
 
+    // ✅ Password Validation
+    if (newPassword.length < 6) {
+        alert("Password must be at least 6 characters long!");
+        return false;
+    }
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return false;
+    }
   try {
       const response = await fetch('/resetPassword', {
           method: 'POST',

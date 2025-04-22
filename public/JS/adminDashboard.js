@@ -421,6 +421,23 @@ function loadBatches() {
         }
     });
 }
+//=========== serach SUBJECTS ==========================
+$('#subject-search').on('keyup', function () {
+    let value = $(this).val().toLowerCase();
+    $('#edit-subjects-table tbody tr').filter(function () {
+        let name = $(this).find('.edit-subject-name').val().toLowerCase();
+        let code = $(this).find('.edit-subject-code').val().toLowerCase();
+        let semester = $(this).find('.edit-semester').val().toString().toLowerCase();
+        let batch = $(this).find('.edit-batch').val().toLowerCase();
+
+        $(this).toggle(
+            name.includes(value) ||
+            code.includes(value) ||
+            semester.includes(value) ||
+            batch.includes(value)
+        );
+    });
+});
 
 // ========== FETCH SUBJECTS BASED ON SELECTED BATCH ==========
 $('#batch-select').change(() => {
