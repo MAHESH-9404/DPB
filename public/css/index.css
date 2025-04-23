@@ -2,7 +2,7 @@ a {
   display: block;
   text-align: center;
   text-decoration: none;
-  background-color: #00bfff;
+  background-color: #f96f6f;
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
@@ -15,4 +15,21 @@ h1 {
   font-family: 'Poppins', sans-serif; /* you can swap in a cooler font if you want */
   text-align: center;
   position: relative;
+}
+nav.container a.button {
+  font-size: 24px;
+  font-weight: 800;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  color: #fff;
+  background-color: #110094;
+  border-radius: 8px;
+  margin: 10px auto;
+  align-items: center;
+}
+
+nav.container {
+  text-align: center;
+  padding: 20px;
 }
