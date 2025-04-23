@@ -12,7 +12,7 @@ document.getElementById('resetPasswordForm').addEventListener('submit', async (e
         return false;
     }
 
-    if (password !== confirmPassword) {
+    if (newPassword !== confirmPassword) {
         alert("Passwords do not match!");
         return false;
     }
